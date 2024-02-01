@@ -2,7 +2,7 @@ import {
   getServerSession,
   type DefaultSession,
   type NextAuthOptions
-} from 'next-auth'
+} from 'next-auth';
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -14,10 +14,10 @@ declare module 'next-auth' {
   // eslint-disable-next-line no-unused-vars
   interface Session extends DefaultSession {
     user: {
-      id: string
+      id: string;
       // ...other properties
       // role: UserRole;
-    } & DefaultSession['user']
+    } & DefaultSession['user'];
   }
 
   // interface User {
@@ -52,11 +52,11 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ]
-}
+};
 
 /**
  * Wrapper for `getServerSession` so that you don't need to import the `authOptions` in every file.
  *
  * @see https://next-auth.js.org/configuration/nextjs
  */
-export const getServerAuthSession = () => getServerSession(authOptions)
+export const getServerAuthSession = () => getServerSession(authOptions);

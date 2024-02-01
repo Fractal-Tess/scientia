@@ -1,14 +1,14 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 import {
   createTRPCRouter,
   protectedProcedure,
-  publicProcedure,
-} from "$/server/api/trpc";
+  publicProcedure
+} from '$/server/api/trpc';
 
 let post = {
   id: 1,
-  name: "Hello World",
+  name: 'Hello World'
 };
 
 export const postRouter = createTRPCRouter({
@@ -16,7 +16,7 @@ export const postRouter = createTRPCRouter({
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
       return {
-        greeting: `Hello ${input.text}`,
+        greeting: `Hello ${input.text}`
       };
     }),
 
@@ -24,7 +24,7 @@ export const postRouter = createTRPCRouter({
     .input(z.object({ name: z.string().min(1) }))
     .mutation(async ({ input }) => {
       // simulate a slow db call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       post = { id: post.id + 1, name: input.name };
       return post;
@@ -35,6 +35,6 @@ export const postRouter = createTRPCRouter({
   }),
 
   getSecretMessage: protectedProcedure.query(() => {
-    return "you can now see this secret message!";
-  }),
+    return 'you can now see this secret message!';
+  })
 });
