@@ -1,4 +1,4 @@
-import "$/styles/globals.css";
+import "@repo/ui/globals.css";
 
 import { Inter } from "next/font/google";
 
