@@ -7,10 +7,21 @@
       }
     ],
     "paths": {
-      "@ui/*": ["../../packages/ui/src/*"],
-      "$": ["./src"],
-      "$/*": ["./src/*"]
-    }
+      "@ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "$": [
+        "./src"
+      ],
+      "$/*": [
+        "./src/*"
+      ]
+    },
+    "incremental": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
@@ -20,5 +31,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

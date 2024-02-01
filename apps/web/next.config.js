@@ -3,7 +3,7 @@
  * for Docker builds.
  */
 await import('./src/env.js');
-import nextPwa from 'next-pwa';
+import nextPwa from '@ducanh2912/next-pwa';
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
@@ -15,12 +15,15 @@ const nextConfig = {
   transpilePackages: ['@repo/ui']
 };
 
-// Configuration object tells the next-pwa plugin
 const withPWA = nextPwa({
-  dest: 'public', // Destination directory for the PWA files
-  disable: process.env.NODE_ENV === 'development', // Disable PWA in development mode
-  register: true, // Register the PWA service worker
-  skipWaiting: true // Skip waiting for service worker activation
+  dest: 'public',
+  cacheOnFrontEndNav: true,
+  aggressiveFrontEndNavCaching: true,
+  reloadOnOnline: true,
+  disable: process.env.NODE_ENV === 'development',
+  workboxOptions: {
+    disableDevLogs: true
+  }
 });
 
 // Export the combined configuration for Next.js with PWA support
