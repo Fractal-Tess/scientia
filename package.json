@@ -14,7 +14,12 @@
     "@repo/typescript-config": "workspace:*",
     "prettier": "^3.2.4",
     "turbo": "^1.12.2",
-    "typescript": "^5.1.6"
+    "typescript": "^5.3.3"
+  },
+  "engineStrict": false,
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=8.15.0"
   },
   "packageManager": "pnpm@8.15.1"
 }
