@@ -1,14 +1,20 @@
 import '@repo/ui/globals.css';
 
-import { Inter } from 'next/font/google';
+import { Roboto, Fira_Mono } from 'next/font/google';
 
 import { TRPCReactProvider } from '$/trpc/react';
 import type { PropsWithChildren } from 'react';
 import type { Metadata, Viewport } from 'next';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans'
+const inter = Roboto({
+  subsets: ['cyrillic'],
+  variable: '--font-roboto',
+  weight: ['400', '700']
+});
+const firaMono = Fira_Mono({
+  variable: '--font-fira-mono',
+  weight: ['400', '700'],
+  subsets: ['cyrillic']
 });
 
 export const viewport: Viewport = {
@@ -38,7 +44,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+      <body className={`firaMono ${inter.variable} ${firaMono.variable}`}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

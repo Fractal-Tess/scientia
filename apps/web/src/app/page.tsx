@@ -4,6 +4,11 @@ import { CreatePost } from '$/app/_components/create-post';
 import { getServerAuthSession } from '$/server/auth';
 import { api } from '$/trpc/server';
 import { Button } from '@ui/components/ui/button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home'
+};
 
 export default async function Home() {
   noStore();

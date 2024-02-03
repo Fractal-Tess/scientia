@@ -7,7 +7,13 @@
     "lint": "eslint .",
     "format": "prettier --write --ignore-path ../../.gitignore ."
   },
+  "browserslist": [
+    ">0.3%",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
+    "@fontsource/roboto": "^5.0.8",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20.10.6",

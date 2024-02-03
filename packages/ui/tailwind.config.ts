@@ -1,5 +1,8 @@
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import defaultTheme from 'tailwindcss/defaultTheme';
+
+console.log(defaultTheme.fontFamily);
 
 const config = {
   darkMode: ['class'],
@@ -12,6 +15,10 @@ const config = {
   ],
   prefix: '',
   theme: {
+    fontFamily: {
+      roboto: ['var(--font-roboto)', ...defaultTheme.fontFamily.sans],
+      firaMono: ['var(--font-fira-mono)', ...defaultTheme.fontFamily.mono]
+    },
     container: {
       center: true,
       padding: '2rem',
