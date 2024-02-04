@@ -13,10 +13,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@fontsource/roboto": "^5.0.8",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20.10.6",
     "@types/react": "^18.2.46",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.33",
